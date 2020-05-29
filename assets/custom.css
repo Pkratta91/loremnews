@@ -229,8 +229,12 @@ https://gist.github.com/needim/d15fdc2ac133d8078f7c
   }
 
   main .mainheadlineContainer .voicesContainer .avatarvoiceContainer {
-    width: 41%;
+    width: 50%;
   }
+
+  main .mainheadlineContainer .voicesContainer .avatarvoiceContainer img {
+    height: 27vh;
+}
 
   main .exploremorecarouselContainer .exploremoreCarousel img {
     width: 90%;
