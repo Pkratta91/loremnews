@@ -1,0 +1,969 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ body{
+   width: 100%;
+   height: 100%;
+   font-family: Roboto Condensed,Arial Narrow,Arial,sans-serif;
+   position: relative;
+   overflow-x: hidden;
+ }
+
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 975;
+  transition: top 0.3s;
+  top: 0%;
+  transition: transform 0.5s ease-in-out;
+}
+
+header .topheaderContainer{
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 0.05em solid;
+  padding: 0.5em 1em;
+
+}
+
+header .topheaderContainer .signUp{
+  font-weight: 900;
+  float: left;
+  padding: 0 1em;
+  line-height: 40px;
+}
+
+header .topheaderContainer .signUp a{
+  color: #e90606;
+  text-decoration: none;
+}
+
+header .topheaderContainer .logo{
+  color: #e90606;
+  font-weight: 900;
+  display: inline-block;
+  font-family: PT Serif,Georgia,Times,serif;
+}
+
+header .topheaderContainer .logo a{
+  color: #e90606;
+  text-decoration: none;
+}
+
+header .topheaderContainer i{
+  height: 0.9em;
+  color: #e90606;
+  float: right;
+  font-size: 3em;
+  line-height: 56px;
+}
+
+header .topheaderContainer i a{
+  text-decoration: none;
+}
+
+header .topheaderContainer h3{
+  font-weight: 900;
+  float: right;
+  padding: 0 1em;
+  line-height: 40px;
+}
+
+header .topheaderContainer h3 a{
+  color: #e90606;
+  text-decoration: none;
+}
+
+header .bottomheaderContainer{
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: 0.05em solid;
+  padding: 0.5em 0;
+  position: relative;
+}
+
+header .bottomheaderContainer .animatedmenuContainer{
+  display: inline-block;
+  cursor: pointer;
+  top: 50%;
+  left: 0;
+  transform: translate(0%, -50%);
+  position: absolute;
+  padding-left: 2em;
+}
+
+header .bottomheaderContainer .animatedmenuContainer .barOne, .barTwo, .barThree{
+  width: 1.3em;
+  height: 0.1em;
+  background-color: black;
+  margin: 0.4em 0;
+  transition: 0.4s;
+}
+
+.change .barOne {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .barTwo {
+  opacity: 0;
+}
+
+.change .barThree {
+  -webkit-transform: rotate(45deg) translate(-5px, -3px) ;
+  transform: rotate(45deg) translate(-5px, -3px);
+}
+
+header .bottomheaderLogo{
+  font-size: 1em;
+  font-weight: 900;
+  display: inline-block;
+  font-family: PT Serif,Georgia,Times,serif;
+  text-transform: uppercase;
+  position: absolute;
+  left: 5em;
+  line-height: 25px;
+}
+
+#subLogo{
+  display: none;
+  transition: 3s ease-in-out;
+}
+
+header .bottomheaderLogo a{
+  color: #e90606;
+  text-decoration: none;
+}
+
+header .bottomheaderContainer ul{
+  display: inline-block;
+  transition:visibility 0.3s linear,opacity 0.3s linear;
+
+}
+
+header .bottomheaderContainer li{
+  display: inline-block;
+  list-style: none;
+  padding: 0 1em;
+}
+
+#bottomList{
+  transition:visibility 0.05s linear,opacity 0.05s linear;
+}
+
+header .bottomheaderContainer li i{
+  background-color: #000;
+  color: #fff;
+  font-size: 0.8em;
+  border-radius: 1em;
+  padding: 0.3em;
+  transform: scaleX(-1);
+}
+
+header .bottomheaderContainer li a{
+  color: #000;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+#searchButton{
+  float: right;
+}
+
+header .bottomheaderContainer .searchContainer{
+  width: 30%;
+  display: inline-block;
+  float: right;
+  line-height: 25px;
+  position: absolute;
+  right: 0.8em;
+}
+
+#searchBar{
+  display: none;
+}
+
+#closeButton{
+  transition: 0.4s ease-in-out;
+  display: none;
+}
+
+header .bottomheaderContainer .searchContainer i{
+  font-size: 1.2em;
+  display: inline-block;
+  line-height: 26px;
+  float: right;
+  padding-right: 0.5em;
+}
+
+header .bottomheaderContainer .searchContainer input{
+  width: 75%;
+  display: block;
+  font-size: 1em;
+  margin: 0 0 0 auto;
+  text-align: left;
+  transition: 0.4s ease-in-out;
+  padding: 0.2em;
+  float: right;
+  border: none;
+  line-height: 23px;
+  font-style: italic;
+  position: relative;
+}
+
+header .bottomheaderContainer .searchContainer input[text]{
+  border: none;
+}
+
+header .bottomheaderContainer .searchContainer input[type=text]:focus {
+  outline: none;
+}
+
+header .searchContainer .closesearchContainer{
+  display: inline-block;
+  float: right;
+}
+
+header .searchContainer .closesearchContainer .lineOne, .lineTwo{
+  width: 1.4em;
+  height: 0.1em;
+  background-color: #000;
+  margin: 0.4em 0;
+  transition: 0.4s;
+}
+
+header .searchContainer .closesearchContainer .lineOne {
+  transform: rotate(-45deg) translate(-5px, 3px);
+}
+
+header .searchContainer .closesearchContainer .lineTwo {
+  transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.sidemenuContainer{
+  width: 0;
+  height: calc(100vh - 6em);
+  background-color: #eaeaea;
+  text-align: left;
+  padding: 0.5em 0;
+  overflow-y: scroll;
+  position: fixed;
+  top: 5.95em;
+  bottom: 0;
+  transition: 0.5s;
+  z-index: 914;
+}
+
+.sidemenuContainer .sectionContent{
+  width: 90%;
+  border-bottom: 0.1em solid #000;
+  margin: 0 auto;
+  padding: 1em 0.5em;
+}
+
+.sidemenuContainer .sectionContent .sectioncontentHeader{
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+.sidemenuContainer .sectionContent li{
+  list-style: none;
+  padding: 0.5em 0;
+}
+
+.sidemenuContainer .sectionContent li a{
+  color: #000;
+  font-size: 1em;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.sidemenuContainer .joinusContent{
+  width: 90%;
+  font-weight: bold;
+  border-bottom: 0.1em solid #000;
+  margin: 0 auto;
+  padding: 1em 0.5em;
+}
+
+.sidemenuContainer .joinusContent .joinuscontentHeader{
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+.sidemenuContainer .joinusContent li{
+  list-style: none;
+  padding: 0.5em 0;
+}
+
+.sidemenuContainer .joinusContent li a{
+  color: #000;
+  font-size: 1em;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.sidemenuContainer .reachoutContent{
+  width: 90%;
+  font-weight: bold;
+  border-bottom: 0.1em solid #000;
+  margin: 0 auto;
+  padding: 1em 0.5em;
+}
+
+.sidemenuContainer .reachoutContent .reachoutcontentHeader{
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+.sidemenuContainer .reachoutContent li{
+  list-style: none;
+  padding: 0.5em 0;
+}
+
+.sidemenuContainer .reachoutContent li a{
+  color: #000;
+  font-size: 1em;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.sidemenuContainer .moreContent{
+  width: 90%;
+  border-bottom: 0.1em solid #000;
+  margin: 0 auto;
+  padding: 1em 0.5em;
+}
+
+.sidemenuContainer .moreContent .morecontentHeader{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sidemenuContainer .moreContent li{
+  list-style: none;
+  padding: 0.5em 0;
+}
+
+.sidemenuContainer .moreContent li a{
+  color: #000;
+  font-size: 0.9em;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.sidemenuContainer .connectContent{
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em 0.5em;
+}
+
+.sidemenuContainer .connectContent .connectcontentHeader{
+  font-weight: bold;
+  text-transform: uppercase;
+
+}
+
+.sidemenuContainer .connectContent li{
+  list-style: none;
+}
+
+.sidemenuContainer .connectContent li a{
+  color: #000;
+  font-size: 1em;
+  font-weight: lighter;
+  text-decoration: none;
+  float: left;
+  padding: 1em 0;
+  padding-right: 1em;
+}
+
+.sidemenuContainer .connectContent li a i{
+  color: #e90606;
+  font-weight: lighter;
+  text-decoration: none;
+  border: 0.1em solid #e90606;
+  display: inline-block;
+  border-radius: 4em;
+  padding: 0.4em 0.5em;
+}
+
+main{
+  text-align: center;
+}
+
+main #overlayBackground{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+main .mainheadlineContainer{
+  width: 70%;
+  display: inline-block;
+  padding: 8em 0 0 0;
+}
+
+main .mainheadlineContainer .headlineContainer{
+  width: 71%;
+  float: left;
+}
+
+main .mainheadlineContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .mainheadlineContainer h5{
+  width: 100%;
+  color: #a3a5a9;
+  text-align: right;
+  font-weight: lighter;
+}
+
+main .mainheadlineContainer .headlineContent{
+  text-align: center;
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .headlineContent h3{
+  color: #e90606;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+main .mainheadlineContainer .headlineContent h2{
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+main .mainheadlineContainer .headlineContent p{
+  font-size: 1.2em;
+}
+
+main .mainheadlineContainer .headlineContent i{
+  color: #e90606;
+  font-size: 2em;
+
+}
+
+main .subheadlineContainer{
+  width: 26%;
+  float: right;
+  text-align: center;
+}
+
+main .subheadlineContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .subheadlineContainer .subheadlinecontentContainer{
+  padding: 1em 0;
+}
+
+main .subheadlineContainer h3{
+  font-weight: bold;
+  text-align: left;
+}
+
+main .subheadlineContainer p{
+  text-align: left;
+  padding: 1em 0;
+}
+
+main .avatarContainer{
+  width: 100%;
+  display: inline-block;
+  background-color: #f0f1f2;
+  margin: 2em 0;
+  padding: 2em 0;
+}
+
+main .avatarContainer h2{
+  color: #e90606;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+main .avatarContainer .avatarContent{
+  display: inline-block;
+  padding: 2em 1.5em;
+}
+
+main .avatarContainer .avatarContent img{
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+
+main .avatarContainer .avatarContent p{
+  width: 10em;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  padding: 1em 0 0 0;
+}
+
+main .mainheadlineContainer h1{
+  font-weight: bold;
+  padding: 1em;
+}
+
+main .mainheadlineContainer .secondheadlineContainer{
+  width: 71%;
+  float: left;
+}
+
+main .mainheadlineContainer .secondheadlineContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .mainheadlineContainer .secondheadlineContainer h5{
+  width: 100%;
+  color: #a3a5a9;
+  text-align: right;
+  font-weight: lighter;
+}
+
+main .mainheadlineContainer .secondheadlineContainer .headlineContent{
+  text-align: center;
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .secondheadlineContainer .headlineContent h3{
+  color: #e90606;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+main .mainheadlineContainer .secondheadlineContainer .headlineContent h2{
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+main .mainheadlineContainer .secondheadlineContainer .headlineContent p{
+  font-size: 1.2em;
+}
+
+main .mainheadlineContainer .secondheadlineContainer .headlineContent i{
+  color: #e90606;
+  font-size: 2em;
+
+}
+
+main .secondsubheadlineContainer{
+  width: 26%;
+  float: right;
+  text-align: center;
+}
+
+main .secondsubheadlineContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .secondsubheadlineContainer .secondsubheadlinecontentContainer{
+  padding: 1em 0;
+}
+
+main .secondsubheadlineContainer .secondsubheadlinecontentContainer h3{
+  font-weight: bold;
+  text-align: left;
+}
+
+main .secondsubheadlineContainer .secondsubheadlinecontentContainer p{
+  text-align: left;
+  padding: 1em 0;
+}
+
+main .lateststoryContainer{
+  width: 100%;
+  display: inline-block;
+  background-color: #f0f1f2;
+  margin: 2em 0;
+  padding: 2em 0;
+}
+
+main .lateststoryContainer h2{
+  color: #e90606;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+main .lateststoryContainer h1{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #e90606;
+}
+
+main .lateststoryContainer .lateststoryContent{
+  display: inline-block;
+  padding: 2em;
+}
+
+main .lateststoryContainer .lateststoryContent p{
+  width: 10em;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  padding: 1em 0 0 0;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer{
+  width: 71%;
+  float: left;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer h5{
+  width: 100%;
+  color: #a3a5a9;
+  text-align: right;
+  font-weight: lighter;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer .headlineContent{
+  text-align: center;
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer .headlineContent h3{
+  color: #e90606;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer .headlineContent h2{
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+main .mainheadlineContainer .thirdheadlineContainer .headlineContent p{
+  font-size: 1.2em;
+}
+
+main .topthirdsubheadlineContainer{
+  width: 26%;
+  height: 5em;
+  background-color: #f0f1f2;
+  border: 0.05em solid;
+  border-bottom: none;
+  float: right;
+  position: relative;
+}
+
+main .topthirdsubheadlineContainer i{
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+  top: -1%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .subheadlineimageContainer{
+  width: 26%;
+  float: right;
+  padding: 1em 0;
+}
+
+main .subheadlineimageContainer img{
+  width: 90%;
+  height: auto;
+}
+
+main .bottomthirdsubheadlineContainer{
+  width: 26%;
+  background-color: #f0f1f2;
+  border: 0.05em solid;
+  border-top: none;
+  float: right;
+  padding: 4em 0;
+}
+
+main .bottomthirdsubheadlineContainer h3{
+  font-weight: bold;
+}
+
+main .bottomthirdsubheadlineContainer p{
+  width: 50%;
+  margin: auto;
+  padding: 3em 0;
+}
+
+main .bottomthirdsubheadlineContainer .newsletterButton{
+  width: 70%;
+  background-color: #fff;
+  border: 0.1em solid;
+  border-radius: 2em;
+  color: #e90606;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 0 0 2em 0;
+}
+
+main .bottomthirdsubheadlineContainer .subscribeButton{
+  width: 70%;
+  background-color: #e90606;
+  border: 0.1em solid;
+  border-radius: 2em;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+main .mainheadlineContainer .bottomthirdheadlineContainer{
+  width: 71%;
+  float: left;
+}
+
+main .mainheadlineContainer .subbottomthirdheadlineleftContainer {
+  width: 49%;
+  display: inline-block;
+  float: left;
+}
+
+main .mainheadlineContainer .subbottomthirdheadlineleftContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .mainheadlineContainer .subbottomthirdheadlineleftContainer h3{
+  text-align: left;
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .subbottomthirdheadlinerightContainer {
+  width: 49%;
+  display: inline-block;
+  float: right;
+}
+
+main .mainheadlineContainer .subbottomthirdheadlinerightContainer img{
+  width: 100%;
+  height: auto;
+}
+
+main .mainheadlineContainer .subbottomthirdheadlinerightContainer h3{
+  text-align: left;
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .secondHeader{
+  width: 100%;
+  display: inline-block;
+  padding: 2em 0 1em 0;
+}
+
+main .mainheadlineContainer .voicesContainer{
+  width: 71%;
+  float: left;
+  border-right: 0.1em solid #f0f1f2;
+
+}
+
+main .mainheadlineContainer .voicesContainer .avatarvoiceContainer{
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  margin: 0 1.5em;
+
+}
+
+main .mainheadlineContainer .voicesContainer .avatarvoiceContainer img{
+  width: 100%;
+  height: 25vh;
+  border-radius: 50%;
+  filter: grayscale();
+  margin: 2em 0;
+}
+
+main .mainheadlineContainer .voicesContainer .avatarvoiceContainer h3{
+  color: #e90606;
+  text-transform: uppercase;
+}
+
+main .mainheadlineContainer .voicesContainer .avatarvoiceContainer h2{
+  font-weight: lighter;
+  padding: 0.5em 0;
+}
+
+main .mainheadlineContainer .subvoiceContainer{
+  width: 26%;
+  float: right;
+}
+
+main .mainheadlineContainer .subvoiceContainer .subvoiceContent{
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .subvoiceContainer .subvoiceContent h3{
+  color: #e90606;
+  text-transform: uppercase;
+  padding: 1em 0;
+}
+
+main .mainheadlineContainer .subvoiceContainer .subvoiceContent p{
+  font-weight: bold;
+
+}
+
+main .thirdHeader{
+  width: 100%;
+  display: inline-block;
+  padding: 2em 0 1em 0;
+}
+
+main .exploremoreContainer{
+  width: 90%;
+  display: inline-block;
+}
+
+main .exploremoreContent{
+  width: 17%;
+  display: inline-block;
+  margin: 0 0.2em;
+  transition: transform .2s;
+}
+
+main .exploremoreContent:hover{
+  transform: scale(1.05);
+}
+
+main .exploremoreContent img{
+  width: 100%;
+  height: 55vh;
+}
+
+main .exploremorecarouselContainer{
+  width: 100%;
+  display: inline-block;
+}
+
+main #exploreCarousel{
+  display: none;
+}
+
+main .exploremorecarouselContainer .exploremoreCarousel{
+  width: 100%;
+  display: none;
+  padding: 0 0 1em 0;
+}
+
+main .exploremorecarouselContainer .exploremoreCarousel img{
+  width: 80%;
+  height: 70vh;
+}
+
+main .exploremorecarouselContainer .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+main .exploremorecarouselContainer .active, .dot:hover {
+  background-color: #717171;
+}
+
+main .signupContainer{
+  background-color: #f0f1f2;
+  display: inline-block;
+  padding: 4em;
+  margin: 4em 0;
+}
+
+main .signupContainer p{
+  width: 60%;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: middle;
+}
+
+main .signupContainer button{
+  background-color: #e90606;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 2em;
+  margin: 0 2em;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  display: inline-block;
+
+}
+
+main .forthHeader{
+  width: 100%;
+  color: #e90606;
+  font-family: PT Serif,Georgia,Times,serif;
+  display: inline-block;
+  padding: 0 0 1em 0;
+}
+
+main .socialmediaContainer li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+main .socialmediaContainer i{
+  color: #e90606;
+  border: 0.1em solid #e90606;
+  border-radius:60%;
+  padding: 0.5em 0.6em;
+  margin: 0 0 2em 0;
+}
+
+footer .footerlinksContainer{
+  border-top: 0.05em solid #f0f1f2;
+  border-bottom: 0.05em solid #f0f1f2;
+  text-align: center;
+}
+
+footer .footerlinksContainer ul{
+  display: inline-block;
+  padding: 2em 6em;
+}
+
+footer .footerlinksContainer li{
+  color: #686c73!important;
+  list-style: none;
+  text-align: left;
+  padding: 0.4em 0;
+}
